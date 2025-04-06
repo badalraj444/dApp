@@ -1,0 +1,7 @@
+i have for the time-being remover the feature that only CareProviders can add data, anyone can add now
+because it conflicted with permission change , when i needed to call this same function of adding data
+
+notification check function should have been read only... so it wont cost gas
+
+notification contract buffer of notifications can be revisited , where the newest data gets inserted and how it will be shown in permission 
+request.. check permission request function

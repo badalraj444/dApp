@@ -1,0 +1,19 @@
+there is a change how the permission will be managed and how it will be accessed by new requester
+the change is as per the paper.. earlier version was complicated where the permission was recorded in a separate mapping. permission need not
+be managed at all. granting permission simply means that the the GRANTPERMISSION function in permission contract will send another metadata
+to the blockchain named to the requester and the final public key will be decrypted first with patient key and re-encrypted with the requester key.
+it means that this data is visible to any user but only the requester can view it as the final public key is encrypted with the public key of 
+only the requester.
+
+the blockchain will keep all metadata at one place.. who can see use it depends on whose public key is used to encrypt it... 
+
+once permission is granted, it means there is metadata named to requester with hash of data and encrypted with requewtser key , he can search it and
+decrypt it and use the key to decrypt the encrytped raw data
+
+it also means that metadata will be defined before permission , because GRANTPERMISSION will call addData function from metadata to add 
+another data to the datapool just changing the encryption of the final key and naming it to the requester
+
+dapp has one important role in this: the patient should be prompted to submit a transaction to approve a request... or to perform tests of 
+system.. you have to do it manually, call the addData function
+
+solidity does not support encryption... it has to be done off-chain
